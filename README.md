@@ -1,4 +1,10 @@
 # Fresh Fruits Gallery
+<ul>
+<li>Online Fruits Supply</li>
+<li>Various type of fruits buy here</li>
+<li>Fresh & healthy fruits stock here</li>
+<li>Easy to run you business from here</li>
+</ul>
 
 Firebase Deploy link [Live server](https://fresh-fruits-supplier.web.app).
 
