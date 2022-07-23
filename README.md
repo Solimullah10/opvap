@@ -7,7 +7,7 @@ Fresh Fruits Gallery server site code [See in Github](https://github.com/Program
 
 Hiroku deploy link [Create React App](https://github.com/facebook/create-react-app).
 
-Firebase Deploy link [Create React App](https://github.com/facebook/create-react-app).
+Firebase Deploy link [Create React App](https://fresh-fruits-supplier.web.app).
 
 ## Available Scripts
 
