@@ -4,12 +4,13 @@ Fresh Fruits Gallery client site code [See in Github](https://github.com/Program
 
 Fresh Fruits Gallery server site code [See in Github](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Solimullah10).
 
-
-Hiroku deploy link [Create React App](https://github.com/facebook/create-react-app).
-
 Firebase Deploy link [Create React App](https://fresh-fruits-supplier.web.app).
 
+Heroku deploy link [Create React App](https://shielded-oasis-06280.herokuapp.com/fruits).
+
+
 ## Available Scripts
+
 
 
 
