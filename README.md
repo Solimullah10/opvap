@@ -4,13 +4,15 @@ Fresh Fruit Supplier
 =======
 # Fresh Fruits Gallery
 
+Firebase Deploy link [Create React App](https://fresh-fruits-supplier.web.app).
+
+Heroku deploy link [Create React App](https://shielded-oasis-06280.herokuapp.com/fruits).
+
 Fresh Fruits Gallery client site code [See in Github](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Solimullah10).
 
 Fresh Fruits Gallery server site code [See in Github](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Solimullah10).
 
-Firebase Deploy link [Create React App](https://fresh-fruits-supplier.web.app).
 
-Heroku deploy link [Create React App](https://shielded-oasis-06280.herokuapp.com/fruits).
 >>>>>>> 17da0205eafc07b09653926a9456ca72ad545821
 
 
