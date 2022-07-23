@@ -1,14 +1,17 @@
 # Fresh Fruits Gallery
 
-Fresh Fruits Gallery client site [Create React App](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Solimullah10).
-Fresh Fruits Gallery server site [Create React App](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Solimullah10).
+Fresh Fruits Gallery client site [client site code](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Solimullah10).
+
+Fresh Fruits Gallery server site [server site code](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Solimullah10).
+
 
 Hiroku deploy link [Create React App](https://github.com/facebook/create-react-app).
+
 Firebase Deploy link [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+
 
 ### `npm start`
 
