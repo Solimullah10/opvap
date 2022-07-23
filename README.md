@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 # Getting Started with Create React App
+
 Fresh Fruit Supplier
-=======
+
 # Fresh Fruits Gallery
 
 Firebase Deploy link [Create React App](https://fresh-fruits-supplier.web.app).
@@ -12,8 +12,6 @@ Fresh Fruits Gallery client site code [See in Github](https://github.com/Program
 
 Fresh Fruits Gallery server site code [See in Github](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Solimullah10).
 
-
->>>>>>> 17da0205eafc07b09653926a9456ca72ad545821
 
 
 ## Available Scripts
