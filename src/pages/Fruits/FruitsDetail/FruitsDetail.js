@@ -6,10 +6,10 @@ const FruitsDetail = () => {
     const fruitId = useParams().fruitId;
     const [fruit, setFruit] = useState({});
 
-    const url = `http://localhost:5000/fruits/${fruitId}`;
+    const url = `https://shielded-oasis-06280.herokuapp.com/fruits/${fruitId}`;
 
     useEffect(() => {
-        // const url = `http://localhost:5000/fruits/${fruitId}`;
+        // const url = `https://shielded-oasis-06280.herokuapp.com/fruits/${fruitId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setFruit(data));

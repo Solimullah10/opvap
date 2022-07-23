@@ -34,7 +34,7 @@ const AddFruits = () => {
             }
 
 
-            const URL = `http://localhost:5000/fruits`;
+            const URL = `https://shielded-oasis-06280.herokuapp.com/fruits`;
 
             fetch(URL, {
                 method: 'POST',

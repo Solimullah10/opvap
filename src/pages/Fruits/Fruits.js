@@ -9,7 +9,7 @@ const Fruits = () => {
 
     const handleDelete = (id) => {
         // console.log('delete', id);
-        const url = `http://localhost:5000/fruits/${id}`;
+        const url = `https://shielded-oasis-06280.herokuapp.com/fruits/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
