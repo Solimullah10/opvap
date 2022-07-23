@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-Fresh Fruit Supplier
-
 # Fresh Fruits Gallery
 
 Firebase Deploy link [Create React App](https://fresh-fruits-supplier.web.app).
