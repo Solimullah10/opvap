@@ -1,8 +1,8 @@
 # Fresh Fruits Gallery
 
-Fresh Fruits Gallery client site [client site code](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Solimullah10).
+Fresh Fruits Gallery client site [See in Github](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Solimullah10).
 
-Fresh Fruits Gallery server site [server site code](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Solimullah10).
+Fresh Fruits Gallery server site [See in Github](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Solimullah10).
 
 
 Hiroku deploy link [Create React App](https://github.com/facebook/create-react-app).
