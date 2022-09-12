@@ -24,22 +24,22 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/home">Home</Nav.Link>
+                        <Nav.Link href="/home">হোম</Nav.Link>
                         <Nav.Link href="/blogs">Blogs</Nav.Link>
                     </Nav>
-                    <Nav className="ms-auto">
+                    <Nav className="mx-auto">
                         {
                             user ?
                                 <>
-                                    <Nav.Link href="/fruits">Manage Fruits</Nav.Link>
-                                    <Nav.Link href="/addfruits">Add Fruits</Nav.Link>
-                                    <Nav.Link href="/myfruits">My Fruits</Nav.Link>
-                                    <input onClick={handleLogOut} className='btn btn-warning' type="button" value="Log Out" />
+                                    <Nav.Link href="/fruits">পণ্য নিয়ন্ত্রন করুন</Nav.Link>
+                                    <Nav.Link href="/addfruits">নতুন পণ্য যোগ করুন</Nav.Link>
+                                    <Nav.Link href="/myfruits">আমার পণ্য</Nav.Link>
+                                    <input onClick={handleLogOut} className='btn btn-warning' type="button" value="লগ আউট" />
                                 </>
                                 :
                                 <>
-                                    <Nav.Link href="/register">Register</Nav.Link>
-                                    <Nav.Link href="/login">Login</Nav.Link>
+                                    <Nav.Link href="/register">রেজিষ্টার</Nav.Link>
+                                    <Nav.Link href="/login">লগইন</Nav.Link>
                                 </>
                         }
                     </Nav>

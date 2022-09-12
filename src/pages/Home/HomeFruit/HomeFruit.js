@@ -10,11 +10,10 @@ const Fruit = ({ fruit }) => {
             <Card className='bg-light'>
                 <Card.Img variant="top" src={fruit.img} />
                 <Card.Body>
-                    <Card.Title>Name: {fruit.name}</Card.Title>
-                    <Card.Text>Price: {fruit.price}$/ton</Card.Text>
-                    <Card.Text>Quantity: {fruit.quantity}Ton</Card.Text>
-                    <Card.Text>{fruit.shortDescription}</Card.Text>
-                    <Card.Text>Supplier: {fruit.supplierName}</Card.Text>
+                    <Card.Title>নাম: {fruit.name}</Card.Title>
+                    <Card.Text>দাম: {fruit.price}টাকা/মণ</Card.Text>
+                    <Card.Text>পরিমাণ: {fruit.quantity}Ton</Card.Text>
+                    <Card.Text>সরবরাহকারী: {fruit.supplierName}</Card.Text>
                 </Card.Body>
                 <Card.Link>
                     <Link to={`/fruits/${fruit._id}`}>

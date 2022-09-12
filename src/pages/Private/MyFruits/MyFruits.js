@@ -43,11 +43,10 @@ const MyFruits = () => {
                 {
                     myfruits.map(fruit => <div key={fruit._id}
                         className='w-100 mx-auto my-4 p-4 border border-primary rounded'>
-                        <p>Name: {fruit.name}</p>
-                        <p>Price: {fruit.price}</p>
-                        <p>Quantity: {fruit.quantity}</p>
-                        <p>Description: {fruit.shortDescription}</p>
-                        <p>Supplier Name: {fruit.supplierName}</p>
+                        <p>নাম: {fruit.name}</p>
+                        <p>দাম: {fruit.price}</p>
+                        <p>পরিমাণ: {fruit.quantity}</p>
+                        <p>সরবরাহকারী: {fruit.supplierName}</p>
                         <p>Total Sold: {fruit.sold}</p>
                         <button onClick={() => handleDelete(fruit._id)} className='btn btn-danger w-50'>Delete</button>
                     </div>)

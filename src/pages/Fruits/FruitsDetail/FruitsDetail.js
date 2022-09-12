@@ -71,7 +71,6 @@ const FruitsDetail = () => {
                     <Card.Title>Name: {fruit.name}</Card.Title>
                     <Card.Text>Price: {fruit.price}$/ton</Card.Text>
                     <Card.Text>Current Quantity: {fruit.quantity}Ton</Card.Text>
-                    <Card.Text>{fruit.shortDescription}</Card.Text>
                     <Card.Text>Supplier: {fruit.supplierName}</Card.Text>
                     <Card.Text>Total Sold: {fruit.sold}</Card.Text>
                 </Card.Body>

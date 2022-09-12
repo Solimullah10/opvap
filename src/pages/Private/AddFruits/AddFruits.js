@@ -75,12 +75,14 @@ const AddFruits = () => {
             {
                 added && <p>Fruit has been added successfully!</p>
             }
-            <h2>Add New Fruits</h2>
+            <h2>নতুন পণ্য যোগ করুন</h2>
             <form onSubmit={handleAddFuit} className='w-50 mx-auto'>
                 <input
                     className='w-100 p-1 mb-2'
                     type="text" name="name"
-                    placeholder="Enter Fruit Name" required />
+                    placeholder="পণ্যের নাম লিখুন" required />
+
+                <h3>বিভিন্ন স্থানে বর্তমান মূল্যের তালিকা</h3>
                 <input
                     className='w-100 p-1 mb-2'
                     type="number" name="price"
@@ -89,10 +91,6 @@ const AddFruits = () => {
                     className='w-100 p-1 mb-2'
                     type="number" name="quantity"
                     placeholder="Enter quantity greater than or equal 80" min={80} required />
-                <textarea
-                    className='w-100 p-1 mb-2'
-                    type="text" name="description"
-                    placeholder="Write a short description about this fruit" required />
 
                 <input
                     className='w-100 p-1 mb-2'
