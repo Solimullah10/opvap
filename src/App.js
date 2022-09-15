@@ -6,7 +6,6 @@ import Register from './pages/Login/Register/Register';
 import NotFound from './pages/Shared/NotFound/NotFound';
 import Fruits from './pages/Fruits/Fruits';
 import Footer from './pages/Shared/Footer/Footer';
-import Blogs from './pages/Blogs/Blogs';
 import Header from './pages/Shared/Header/Header';
 import AddFruits from './pages/Private/AddFruits/AddFruits';
 import MyFruits from './pages/Private/MyFruits/MyFruits';
@@ -18,7 +17,6 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
@@ -32,11 +30,9 @@ function App() {
             <FruitsDetail></FruitsDetail>
           </RequireAuth>
         }></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/forgetpassword" element={<ForgetPassword></ForgetPassword>}></Route>
-
         <Route path="/addfruits" element={
           <RequireAuth>
             <AddFruits></AddFruits>

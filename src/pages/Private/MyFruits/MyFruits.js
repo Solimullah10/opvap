@@ -19,7 +19,7 @@ const MyFruits = () => {
     }, []);
 
     const handleDelete = (id) => {
-        const proceed = window.confirm("Are you sure, you want to delete this fruit?");
+        const proceed = window.confirm("আপনি কী এই পণ্যটি ডিলিট করতে চাচ্ছেন?");
         if (proceed) {
             const url = `http://localhost:5000/add/${id}`;
             fetch(url, {
@@ -45,9 +45,7 @@ const MyFruits = () => {
                         className='w-100 mx-auto my-4 p-4 border border-primary rounded'>
                         <p>নাম: {fruit.name}</p>
                         <p>দাম: {fruit.price}</p>
-                        <p>পরিমাণ: {fruit.quantity}</p>
                         <p>সরবরাহকারী: {fruit.supplierName}</p>
-                        <p>Total Sold: {fruit.sold}</p>
                         <button onClick={() => handleDelete(fruit._id)} className='btn btn-danger w-50'>Delete</button>
                     </div>)
                 }

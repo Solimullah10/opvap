@@ -14,7 +14,7 @@ const Home = () => {
             <h2 className='mt-5'>Trending Fruits</h2>
             <Row xs={1} md={3} className="w-75 my-4 mx-auto g-4">
                 {
-                    fruits.slice(0, 6).map(fruit => <HomeFruit
+                    fruits.map(fruit => <HomeFruit
                         key={fruit._id}
                         fruit={fruit}
                     ></HomeFruit>)

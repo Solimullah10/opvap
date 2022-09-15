@@ -11,15 +11,13 @@ const Fruit = ({ fruit }) => {
                 <Card.Img variant="top" src={fruit.img} />
                 <Card.Body>
                     <Card.Title>নাম: {fruit.name}</Card.Title>
-                    <Card.Text>দাম: {fruit.price}টাকা/মণ</Card.Text>
-                    <Card.Text>পরিমাণ: {fruit.quantity}Ton</Card.Text>
                     <Card.Text>সরবরাহকারী: {fruit.supplierName}</Card.Text>
                 </Card.Body>
                 <Card.Link>
                     <Link to={`/fruits/${fruit._id}`}>
                         <button
                             className='btn btn-primary w-100'
-                            variant="primary">Manage Fruits</button>
+                            variant="primary">বিস্তারিত দেখুন</button>
                     </Link>
                 </Card.Link>
             </Card>
