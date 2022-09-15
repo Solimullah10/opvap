@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
@@ -46,17 +47,25 @@ const MyFruits = () => {
     return (
         <div className='my-5'>
             <h2>My Fruits</h2>
-            <div className='w-50 mx-auto my-5'>
+            <Row xs={1} md={3} className="w-75 my-4 mx-auto g-4">
                 {
-                    myfruits.map(fruit => <div key={fruit._id}
-                        className='w-100 mx-auto my-4 p-4 border border-primary rounded'>
-                        <p>নাম: {fruit.name}</p>
-                        <p>দাম: {fruit.price}</p>
-                        <p>সরবরাহকারী: {fruit.supplierName}</p>
-                        <button onClick={() => handleDelete(fruit._id)} className='btn btn-danger w-50'>Delete</button>
-                    </div>)
+                    myfruits.map(fruit => <Col key={fruit._id}>
+                        <Card className='bg-light'>
+                            <Card.Img variant="top" src={fruit.img} />
+                            <Card.Body>
+                                <Card.Title>নাম: {fruit.name}</Card.Title>
+                                <Card.Text>তথ্য সরবরাহকারী: {fruit.supplierName}</Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <button
+                                    onClick={() => handleDelete(fruit._id)}
+                                    className='btn btn-danger w-100'
+                                    variant="primary">ডিলিট করুন</button>
+                            </Card.Footer>
+                        </Card>
+                    </Col>)
                 }
-            </div>
+            </Row>
         </div>
     );
 };

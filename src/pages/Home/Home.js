@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h2 className='mt-5'>Trending Fruits</h2>
+            <marquee style={{ width: '73%' }} className="text-success"> <h2 className='mt-5'>আপনি যে পণ্যটির দাম যাচাই করতে চাচ্ছেন সেই পণ্যটির বিস্তারিত দেখুন </h2></marquee>
             <Row xs={1} md={3} className="w-75 my-4 mx-auto g-4">
                 {
                     fruits.map(fruit => <HomeFruit
@@ -20,10 +20,6 @@ const Home = () => {
                     ></HomeFruit>)
                 }
             </Row>
-            <div style={{ margin: '150px auto 40px auto' }} className='w-100'>
-                <Link className='btn btn-primary fs-3 w-50' to="/fruits">Manage Fruits</Link>
-            </div>
-
         </div>
     );
 };

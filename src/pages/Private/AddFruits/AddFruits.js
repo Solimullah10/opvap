@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import useFruits from '../../../hooks/useFruits/useFruits';
 
 const AddFruits = () => {
+
     const [user] = useAuthState(auth);
     // console.log(user.email);
     const [added, setAdded] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    if (added) {
+        navigate(from, { replace: true });
+    }
+
     if ((user.email !== 'admin@gmail.com') && (user.email !== 'admin1@gmail.com') && (user.email !== 'admin2@gmail.com') && (user.email !== 'admin3@gmail.com') && (user.email !== 'admin4@gmail.com') && (user.email !== 'admin5@gmail.com') && (user.email !== 'admin6@gmail.com') && (user.email !== 'admin7@gmail.com')) {
         return (<div>
             <p className='fs-4 text-danger'>আপনি এই পেজের এ্যাডমিন নন। যে কোনো প্রয়োজনে এ্যাডমিনদের সাথে যোগাযোগ করুন...</p>
@@ -123,11 +132,11 @@ const AddFruits = () => {
 
 
     return (
-        <div className='my-5'>
-            <h2>নতুন পণ্য যোগ করুন</h2>
+        <div className='mb-5'>
+            <h2 style={{ backgroundColor: '#E8F0FE' }} className='w-50 mx-auto py-3 my-4'>নতুন পণ্য যোগ করুন</h2>
             <form onSubmit={handleAddFuit} className='w-50 mx-auto'>
                 <input
-                    className='w-100 p-1 mb-2'
+                    className='w-100 p-1 mb-2 '
                     type="text" name="name"
                     placeholder="পণ্যের নাম লিখুন" required />
                 <input
@@ -140,113 +149,175 @@ const AddFruits = () => {
                     type="url" name="url"
                     placeholder="পণ্যের ছবির লিংক এখানে দিন" required />
 
-                <h3>বিভিন্ন স্থানে বর্তমান মূল্যের তালিকা</h3>
+                <h3 className='mt-5'>বিভিন্ন স্থানে বর্তমান মূল্যের তালিকা</h3>
 
 
 
+                <div style={{ backgroundColor: '#dddd', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>রংপুরের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="rangpur"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>দিনাজপুরের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="dinajpur"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd' }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>রাজশাহীর বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="rajshahi"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>বগুরার বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="bogura"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd' }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>নাটোরের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="nator"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>সিরাজগঞ্জের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="sirajganj"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>ময়মনসিংহের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="mymensingh"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>জামালপুরের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="jamalpur"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd' }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>শেরপুরের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="sherpur"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>ঢাকার বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="dhaka"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd' }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>ফরিদপুরের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="faridpur"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>টাংগাইলের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="tangail"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>সিলেটের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="sylhet"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>মৌলভীবাজারের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="moulvibazar"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd' }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>সুনামগঞ্জের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="sunamganj"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>চট্রগ্রামের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="chattogram"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd' }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>ফেনীর বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="feni"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>নোয়াখালীর বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="noakhali"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>খুলনার বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="khulna"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>যশোরের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="jessore"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd' }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>নরাইলের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="noraile"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#E8F0FE', }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>বরিশালের বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="barishal"
+                        min={0} />
+                </div>
+                <div style={{ backgroundColor: '#dddd' }} className='d-flex align-items-center justify-content-between' >
+                    <p style={{ marginTop: '10px', marginLeft: '10px' }} className='float-left'>বরগুনার বর্তমান দাম লিখুন</p>
+                    <input
+                        className='w-50 p-1 me-1'
+                        type="number" name="barguna"
+                        min={0} />
+                </div>
                 <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="rangpur"
-                    placeholder="রংপুরের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="dinajpur"
-                    placeholder="দিনাজপুরের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="rajshahi"
-                    placeholder="রাজশাহীর বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="bogura"
-                    placeholder="বগুরার বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="nator"
-                    placeholder="নাটোরের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="sirajganj"
-                    placeholder="সিরাজগঞ্জের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="mymensingh"
-                    placeholder="ময়মনসিংহের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="jamalpur"
-                    placeholder="জামালপুরের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="sherpur"
-                    placeholder="শেরপুরের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="dhaka"
-                    placeholder="ঢাকার বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="faridpur"
-                    placeholder="ফরিদপুরের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="tangail"
-                    placeholder="টাংগাইলের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="sylhet"
-                    placeholder="সিলেটের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="moulvibazar"
-                    placeholder="মৌলভীবাজারের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="sunamganj"
-                    placeholder="সুনামগঞ্জের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="chattogram"
-                    placeholder="চট্রগ্রামের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="feni"
-                    placeholder="ফেনীর বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="noakhali"
-                    placeholder="নোয়াখালীর বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="khulna"
-                    placeholder="খুলনার বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="jessore"
-                    placeholder="যশোরের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="noraile"
-                    placeholder="নরাইলের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="barishal"
-                    placeholder="বরিশালের বর্তমান দাম লিখুন" min={0} />
-                <input
-                    className='w-100 p-1 mb-2'
-                    type="text" name="barguna"
-                    placeholder="বরগুনার বর্তমান দাম লিখুন" min={0} />
-
-
-
-
-
-
-
-                <input
-                    className='text-white w-100 mt-4 p-1 bg-primary border-0 rounded'
+                    className='text-white w-100 mt-4 py-3 bg-success border-0 rounded'
                     type="submit"
-                    value="Add Fruit" />
+                    value="নতুন পণ্য যোগ করুন" />
 
             </form>
         </div>

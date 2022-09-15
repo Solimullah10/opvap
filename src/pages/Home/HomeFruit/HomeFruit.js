@@ -16,8 +16,8 @@ const Fruit = ({ fruit }) => {
                 <Card.Link>
                     <Link to={`/fruits/${fruit._id}`}>
                         <button
-                            className='btn btn-primary w-100'
-                            variant="primary">বিস্তারিত দেখুন</button>
+                            className='btn btn-success w-100'
+                            variant="success">বিস্তারিত দেখুন</button>
                     </Link>
                 </Card.Link>
             </Card>

@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <Navbar style={{ backgroundColor: '#ddd' }} className='sticky-top' expand="lg">
             <Container>
-                <Navbar.Brand className='text-danger fs-3 fw-semibold' href="/">ন্যায্যমূল্য কৃষকের অধিকার </Navbar.Brand>
+                <Navbar.Brand className='text-success fs-3 fw-semibold' href="/">ন্যায্যমূল্য কৃষকের অধিকার </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -38,8 +38,8 @@ const Header = () => {
                                 </>
                                 :
                                 <>
-                                    <Nav.Link className='menu-item me-4' href="/register">রেজিষ্টার</Nav.Link>
-                                    <Nav.Link className='me-4 menu-item' href="/login">লগইন</Nav.Link>
+                                    <Nav.Link className='menu-item me-4 mb-2' href="/register">রেজিষ্টার</Nav.Link>
+                                    <Nav.Link className='me-4 menu-item mb-2' href="/login">লগইন</Nav.Link>
                                 </>
                         }
                     </Nav>
