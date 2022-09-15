@@ -42,6 +42,10 @@ const Login = () => {
                     type="password" name="password"
                     placeholder="Enter Password" required />
 
+                {
+                    error && <p className='text-danger'>{error.message}</p>
+                }
+
                 <input
                     className='text-white w-100 p-1 bg-primary border-0 rounded'
                     type="submit"

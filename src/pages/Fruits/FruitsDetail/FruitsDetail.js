@@ -15,29 +15,29 @@ const FruitsDetail = () => {
             .then(data => setFruit(data));
     }, []);
 
-    const handleQuantity = (event) => {
-        event.preventDefault();
-        const num = event.target.number.value;
-        const proceed = window.confirm("Are you sure, you want to Stock?");
-        if (proceed) {
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    quantity: (parseInt(fruit.quantity) + parseInt(num)).toString()
-                })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    fruit.quantity = (parseInt(fruit.quantity) + parseInt(num)).toString();
-                    // console.log(fruit);
-                    setFruit(fruit);
-                })
-        }
+    // const handleQuantity = (event) => {
+    //     event.preventDefault();
+    //     const num = event.target.number.value;
+    //     const proceed = window.confirm("Are you sure, you want to Stock?");
+    //     if (proceed) {
+    //         fetch(url, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 'content-type': 'application/json'
+    //             },
+    //             body: JSON.stringify({
+    //                 quantity: (parseInt(fruit.quantity) + parseInt(num)).toString()
+    //             })
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 fruit.quantity = (parseInt(fruit.quantity) + parseInt(num)).toString();
+    //                 // console.log(fruit);
+    //                 setFruit(fruit);
+    //             })
+    //     }
 
-    }
+    // }
 
     // const handleSold = (id) => {
     //     // console.log('sold');

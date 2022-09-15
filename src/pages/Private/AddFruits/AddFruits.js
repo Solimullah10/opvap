@@ -7,12 +7,18 @@ const AddFruits = () => {
     const [user] = useAuthState(auth);
     // console.log(user.email);
     const [added, setAdded] = useState(false);
+    if ((user.email !== 'admin@gmail.com') && (user.email !== 'admin1@gmail.com') && (user.email !== 'admin2@gmail.com') && (user.email !== 'admin3@gmail.com') && (user.email !== 'admin4@gmail.com') && (user.email !== 'admin5@gmail.com') && (user.email !== 'admin6@gmail.com') && (user.email !== 'admin7@gmail.com')) {
+        return (<div>
+            <p className='fs-4 text-danger'>আপনি এই পেজের এ্যাডমিন নন। যে কোনো প্রয়োজনে এ্যাডমিনদের সাথে যোগাযোগ করুন...</p>
+        </div>)
+    }
 
 
     const handleAddFuit = (event) => {
+        event.preventDefault();
         const proceed = window.confirm('Are you sure, you want to add this Fruit?');
         if (proceed) {
-            event.preventDefault();
+
             const fruitName = event.target.name.value;
             const supplierName = event.target.supplierName.value;
             const url = event.target.url.value;
@@ -23,7 +29,7 @@ const AddFruits = () => {
             const nator = event.target.nator.value;
             const sirajganj = event.target.sirajganj.value;
             const mymensingh = event.target.mymensingh.value;
-            const jamalpur = event.target.jamalpur.vlaue;
+            const jamalpur = event.target.jamalpur.value;
             const sherpur = event.target.sherpur.value;
             const dhaka = event.target.dhaka.value;
             const faridpur = event.target.faridpur.value;
@@ -43,7 +49,7 @@ const AddFruits = () => {
 
 
 
-            console.log(fruitName, supplierName, url, dhaka, rangpur, sylhet, feni, jamalpur, noraile, jamalpur, noakhali);
+            // console.log(fruitName, supplierName, url, dhaka, rangpur, sylhet, feni, jamalpur, noraile, jamalpur, noakhali);
 
             const newFruit = {
                 name: fruitName,
@@ -51,14 +57,14 @@ const AddFruits = () => {
                 img: url,
                 email: user.email,
 
-                rangpur: rangpur,
-                dinajpur: dinajpur,
-                rajshahi: rajshahi,
-                bogura: bogura,
-                nator: nator,
-                sirajganj: sirajganj,
+                rangpur,
+                dinajpur,
+                rajshahi,
+                bogura,
+                nator,
+                sirajganj,
                 mymensingh: mymensingh,
-                jamalpur: jamalpur,
+                jamalpur,
                 sherpur: sherpur,
                 dhaka: dhaka,
                 faridpur: faridpur,
@@ -76,6 +82,8 @@ const AddFruits = () => {
                 barguna: barguna,
 
             }
+
+            console.log(newFruit);
 
 
             const URL = `https://shielded-oasis-06280.herokuapp.com/fruits`;
@@ -116,9 +124,6 @@ const AddFruits = () => {
 
     return (
         <div className='my-5'>
-            {
-                added && <p>Fruit has been added successfully!</p>
-            }
             <h2>নতুন পণ্য যোগ করুন</h2>
             <form onSubmit={handleAddFuit} className='w-50 mx-auto'>
                 <input

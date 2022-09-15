@@ -42,12 +42,15 @@ const Register = () => {
         if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d#$@!%&*?]{8,30}$/.test(password) === false) {
             setPass(true);
         }
+        else if (password !== confirmPassword) {
+            setPassMatch(false);
+        }
         else {
             createUserWithEmailAndPassword(email, password);
             setPassMatch(true);
             setPass(false);
 
-            setTerms(!terms);
+            // setTerms(!terms);
             event.target.reset();
         }
 
@@ -74,10 +77,10 @@ const Register = () => {
                     type="password" name="confirmPassword"
                     placeholder="Confirm Password" required />
 
-                <div className='w-100 p-1 mb-2 text-start'>
+                {/* <div className='w-100 p-1 mb-2 text-start'>
                     <input onClick={() => setTerms(!terms)} type="checkbox" id="check" />
                     <label className={terms ? 'text-success' : 'text-danger'} htmlFor="check">&nbsp;&nbsp;Accept Terms & Conditions</label>
-                </div>
+                </div> */}
 
                 {
                     (passMatch === false || error) && <p className='text-danger'>Password did not match!!!</p>
@@ -98,7 +101,7 @@ const Register = () => {
                 <input
                     className='text-white w-100 p-1 bg-primary border-0 rounded'
                     type="submit"
-                    value="Register" disabled={!terms} />
+                    value="Register" />
 
             </form>
             <p className='my-3'>
