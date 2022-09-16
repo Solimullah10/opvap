@@ -8,7 +8,7 @@ const MyFruits = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        const url = 'http://localhost:5000/add';
+        const url = 'https://shielded-oasis-06280.herokuapp.com/add';
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -20,16 +20,16 @@ const MyFruits = () => {
     }, []);
 
 
-    if ((user.email !== 'admin@gmail.com') && (user.email !== 'admin1@gmail.com') && (user.email !== 'admin2@gmail.com') && (user.email !== 'admin3@gmail.com') && (user.email !== 'admin4@gmail.com') && (user.email !== 'admin5@gmail.com') && (user.email !== 'admin6@gmail.com') && (user.email !== 'admin7@gmail.com')) {
-        return (<div>
-            <p className='fs-4 text-danger'>আপনি এই পেজের এ্যাডমিন নন। যে কোনো প্রয়োজনে এ্যাডমিনদের সাথে যোগাযোগ করুন...</p>
-        </div>)
-    }
+    // if ((user.email !== 'admin@gmail.com') && (user.email !== 'admin1@gmail.com') && (user.email !== 'admin2@gmail.com') && (user.email !== 'admin3@gmail.com') && (user.email !== 'admin4@gmail.com') && (user.email !== 'admin5@gmail.com') && (user.email !== 'admin6@gmail.com') && (user.email !== 'admin7@gmail.com')) {
+    //     return (<div>
+    //         <p className='fs-4 text-danger'>আপনি এই পেজের এ্যাডমিন নন। যে কোনো প্রয়োজনে এ্যাডমিনদের সাথে যোগাযোগ করুন...</p>
+    //     </div>)
+    // }
 
     const handleDelete = (id) => {
         const proceed = window.confirm("আপনি কী এই পণ্যটি ডিলিট করতে চাচ্ছেন?");
         if (proceed) {
-            const url = `http://localhost:5000/add/${id}`;
+            const url = `https://shielded-oasis-06280.herokuapp.com/add/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

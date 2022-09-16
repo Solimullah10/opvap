@@ -7,6 +7,7 @@ import useFruits from '../../../hooks/useFruits/useFruits';
 const AddFruits = () => {
 
     const [user] = useAuthState(auth);
+    console.log(user);
     // console.log(user.email);
     const [added, setAdded] = useState(false);
     const navigate = useNavigate();
@@ -16,11 +17,11 @@ const AddFruits = () => {
         navigate(from, { replace: true });
     }
 
-    if ((user.email !== 'admin@gmail.com') && (user.email !== 'admin1@gmail.com') && (user.email !== 'admin2@gmail.com') && (user.email !== 'admin3@gmail.com') && (user.email !== 'admin4@gmail.com') && (user.email !== 'admin5@gmail.com') && (user.email !== 'admin6@gmail.com') && (user.email !== 'admin7@gmail.com')) {
-        return (<div>
-            <p className='fs-4 text-danger'>আপনি এই পেজের এ্যাডমিন নন। যে কোনো প্রয়োজনে এ্যাডমিনদের সাথে যোগাযোগ করুন...</p>
-        </div>)
-    }
+    // if ((user.email !== 'admin@gmail.com') && (user.email !== 'admin1@gmail.com') && (user.email !== 'admin2@gmail.com') && (user.email !== 'admin3@gmail.com') && (user.email !== 'admin4@gmail.com') && (user.email !== 'admin5@gmail.com') && (user.email !== 'admin6@gmail.com') && (user.email !== 'admin7@gmail.com')) {
+    //     return (<div>
+    //         <p className='fs-4 text-danger'>আপনি এই পেজের এ্যাডমিন নন। যে কোনো প্রয়োজনে এ্যাডমিনদের সাথে যোগাযোগ করুন...</p>
+    //     </div>)
+    // }
 
 
     const handleAddFuit = (event) => {
@@ -66,6 +67,7 @@ const AddFruits = () => {
                 img: url,
                 email: user.email,
 
+                // prices: {
                 rangpur,
                 dinajpur,
                 rajshahi,
@@ -89,6 +91,7 @@ const AddFruits = () => {
                 noraile: noraile,
                 barishal: barishal,
                 barguna: barguna,
+                // }
 
             }
 
@@ -111,7 +114,7 @@ const AddFruits = () => {
                     const newRecord = newFruit;
 
 
-                    const Url = `http://localhost:5000/add`;
+                    const Url = `https://shielded-oasis-06280.herokuapp.com/add`;
 
                     fetch(Url, {
                         method: 'POST',

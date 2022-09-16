@@ -12,6 +12,7 @@ import MyFruits from './pages/Private/MyFruits/MyFruits';
 import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import FruitsDetail from './pages/Fruits/FruitsDetail/FruitsDetail';
 import ForgetPassword from './pages/Login/Login/ForgetPassword/ForgetPassword';
+import AdminRequireAuth from './AdminAuth/AdminRequireAuth/AdminRequireAuth';
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/fruits" element={
           <RequireAuth>
-            <Fruits></Fruits>
+            <AdminRequireAuth>
+              <Fruits></Fruits>
+            </AdminRequireAuth>
           </RequireAuth>
         }></Route>
         <Route path="fruits/:fruitId" element={
@@ -35,12 +38,16 @@ function App() {
         <Route path="/forgetpassword" element={<ForgetPassword></ForgetPassword>}></Route>
         <Route path="/addfruits" element={
           <RequireAuth>
-            <AddFruits></AddFruits>
+            <AdminRequireAuth>
+              <AddFruits></AddFruits>
+            </AdminRequireAuth>
           </RequireAuth>
         }></Route>
         <Route path="/myfruits" element={
           <RequireAuth>
-            <MyFruits></MyFruits>
+            <AdminRequireAuth>
+              <MyFruits></MyFruits>
+            </AdminRequireAuth>
           </RequireAuth>
         }></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
