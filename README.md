@@ -6,7 +6,7 @@
 <li>Easy to run you business from here</li>
 </ul>
 
-Firebase Deploy link [Live server](https://fresh-fruits-supplier.web.app).
+Firebase Deploy link [Live server](https://agriculture-products-bd69f.web.app).
 
 Heroku deploy link [Heroku deploy](https://shielded-oasis-06280.herokuapp.com/fruits).
 
