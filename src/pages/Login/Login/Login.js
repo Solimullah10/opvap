@@ -54,10 +54,10 @@ const Login = () => {
 
             <p className='my-4'>
                 <span className='me-2'>Don't have account?</span>
-                <Link className='text-decoration-none text-warning' to="/register">Register</Link>
+                <Link className='text-decoration-none text-success' to="/register">Please Register</Link>
             </p>
             <p className='my-4'>
-                <Link to="/forgetpassword" className='me-4 text-decoration-none text-warning'>Forget Password?</Link>
+                <Link to="/forgetpassword" className='me-4 text-decoration-none text-danger'>Forget Password?</Link>
             </p>
 
             <SocialLogin></SocialLogin>

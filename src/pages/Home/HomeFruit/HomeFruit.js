@@ -11,7 +11,7 @@ const Fruit = ({ fruit }) => {
                 <Card.Img variant="top" src={fruit.img} />
                 <Card.Body>
                     <Card.Title>নাম: {fruit.name}</Card.Title>
-                    <Card.Text>সরবরাহকারী: {fruit.supplierName}</Card.Text>
+                    <Card.Text>তথ্য সরবরাহকারী: {fruit.supplierName}</Card.Text>
                 </Card.Body>
                 <Card.Link>
                     <Link to={`/fruits/${fruit._id}`}>

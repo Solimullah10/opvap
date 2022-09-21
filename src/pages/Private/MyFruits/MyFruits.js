@@ -46,7 +46,6 @@ const MyFruits = () => {
 
     return (
         <div className='my-5'>
-            <h2>My Fruits</h2>
             <Row xs={1} md={3} className="w-75 my-4 mx-auto g-4">
                 {
                     myfruits.map(fruit => <Col key={fruit._id}>

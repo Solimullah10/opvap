@@ -106,7 +106,7 @@ const Register = () => {
             </form>
             <p className='my-3'>
                 <span className='me-2'>Already have an account?</span>
-                <Link className='text-decoration-none text-warning' to="/login">Login</Link>
+                <Link className='text-decoration-none text-success' to="/login">Please Login</Link>
             </p>
 
             <SocialLogin></SocialLogin>

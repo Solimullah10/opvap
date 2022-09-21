@@ -14,10 +14,6 @@ const Banner = () => {
                     src={banner1}
                     alt="First slide"
                 />
-                <Carousel.Caption>
-                    <h3 className='text-success'>Hello I am Dr. Smith</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
@@ -26,10 +22,6 @@ const Banner = () => {
                     alt="Second slide"
                 />
 
-                <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
@@ -37,13 +29,6 @@ const Banner = () => {
                     src={banner3}
                     alt="Third slide"
                 />
-
-                <Carousel.Caption>
-                    <h3 className='text-dark'>See report my patient</h3>
-                    <p>
-                        The patient fell happy after see reports
-                    </p>
-                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
@@ -53,10 +38,10 @@ const Banner = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3 className='text-dark'>See report my patient</h3>
+                    {/* <h3 className='text-dark'>See report my patient</h3>
                     <p>
                         The patient fell happy after see reports
-                    </p>
+                    </p> */}
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

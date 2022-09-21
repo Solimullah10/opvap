@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import './FruitsDetail.css'
 
 const FruitsDetail = () => {
     const fruitId = useParams().fruitId;
@@ -64,7 +65,7 @@ const FruitsDetail = () => {
     // }
 
     return (
-        <div className='w-50 mx-auto'>
+        <div className='w-50 mx-auto mb-5 custom-wide'>
             <Card className='bg-light'>
                 <Card.Img variant="top" src={fruit.img} />
                 <Card.Body>
@@ -130,12 +131,7 @@ const FruitsDetail = () => {
                         <input className='btn btn-primary ms-3' type="submit" value="Restock" />
                     </form>
                 </Card.Footer> */}
-
-
             </Card >
-            <div style={{ margin: '150px auto 40px auto' }} className='w-100'>
-                <Link className='btn btn-primary fs-3 w-50' to="/fruits">Manage Fruits</Link>
-            </div>
         </div >
     );
 };

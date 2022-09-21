@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import useFruits from '../../../hooks/useFruits/useFruits';
+import './AddFruits.css'
 
 const AddFruits = () => {
 
@@ -136,8 +137,8 @@ const AddFruits = () => {
 
     return (
         <div className='mb-5'>
-            <h2 style={{ backgroundColor: '#E8F0FE' }} className='w-50 mx-auto py-3 my-4'>নতুন পণ্য যোগ করুন</h2>
-            <form onSubmit={handleAddFuit} className='w-50 mx-auto'>
+            <h2 style={{ backgroundColor: '#E8F0FE' }} className='w-50 mx-auto py-3 my-4 custom-wide'>নতুন পণ্য যোগ করুন</h2>
+            <form onSubmit={handleAddFuit} className='w-50 mx-auto custom-wide'>
                 <input
                     className='w-100 p-1 mb-2 '
                     type="text" name="name"
